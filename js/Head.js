@@ -1,12 +1,11 @@
 import React from 'react';
 import * as audio from './audio';
 
-class Card extends React.Component {
+class Head extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      view: 'points',
-      completed: false
+      playing: false
     };
   }
 
@@ -28,19 +27,6 @@ class Card extends React.Component {
     return;
   }
 
-  getLabelBack() {
-    return {
-      __html: this.state.view === 'question'
-        ? this.props.question.question
-        : this.props.question.answer
-    };
-  }
-
-  transitionEndHandler(event) {
-    if (event.propertyName === 'width') {
-      this.setState({flipping: false});
-    }
-  }
 
   render() {
     let style = {
@@ -54,12 +40,6 @@ class Card extends React.Component {
         : <span className='points'>{this.props.question.points}</span>,
       className = 'flipper';
 
-    if (this.state.view !== 'points') {
-      className = className + ' flipped';
-    }
-    if (this.state.flipping) {
-      className = className + ' flipping';
-    }
     return (
       <div
         style={style}
@@ -82,4 +62,4 @@ class Card extends React.Component {
 
 };
 
-export default Card;
+export default Head;

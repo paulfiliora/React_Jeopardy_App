@@ -84,38 +84,38 @@ var data = [
       },
       {
         "points": 1000,
-        "question": "What % of smart phones will use gesture control – e.g. nodding or shaking hand - by 2021?",
+        "question": "What % of smartphones will use gesture control – e.g. nodding or shaking hand - by 2021?",
         "answer": "5%"
       }
     ]
   },
   {
-    "category": "Category",
+    "category": "Artificial Intelligence",
     "questions": [
       {
-        "points": 100,
-        "question": "Question",
-        "answer": "Answer?"
-      },
-      {
         "points": 200,
-        "question": "Question",
-        "answer": "Answer?"
-      },
-      {
-        "points": 300,
-        "question": "Question",
-        "answer": "Answer?"
+        "question": "The process of a computer that self-learns and improves it’s answers without reprogramming.",
+        "answer": "Machine learning"
       },
       {
         "points": 400,
-        "question": "Question",
-        "answer": "Answer?"
+        "question": "This artificial intelligence computer won the game show Jeopardy! ",
+        "answer": "Watson"
       },
       {
-        "points": 500,
-        "question": "Question",
-        "answer": "Answer?"
+        "points": 600,
+        "question": "A machine that can identify images and reveal patterns that people would never detect. ",
+        "answer": "Image recognition"
+      },
+      {
+        "points": 800,
+        "question": "This AI process can chat with you through voice or text.",
+        "answer": "Chatbot"
+      },
+      {
+        "points": 1000,
+        "question": "This AI service from Apple thinks the meaning of life is Chocolate.",
+        "answer": "Siri"
       }
     ]
   },

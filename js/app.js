@@ -10,29 +10,38 @@ class App extends React.Component {
     this.state = {
       windowWidth: window.innerWidth,
       windowHeight: window.innerHeight,
-      data: []
+      data: [],
+      playing: false
     };
   }
 
   handleResize(event) {
-    this.setState({windowWidth: window.innerWidth, windowHeight: window.innerHeight});
+    this.setState({ windowWidth: window.innerWidth, windowHeight: window.innerHeight });
   }
-
+  
   componentDidMount() {
     window.addEventListener('resize', this.handleResize.bind(this));
-    window.addEventListener('keypress', function(e) {
-      if (e.keyCode === 32) {
-        audio.play("countdown");
+    window.addEventListener('keypress', function (e) {
+      if (e.keyCode === 32) {     
+        if (!this.state.playing) {
+          this.setState({ playing: true });
+          audio.play("countdown");
+        } 
+        else {
+          this.setState({ playing: false })
+          audio.stop("countdown");
+        }
       }
-    });
+    }); 
     let rows = 0;
     data.forEach(category => {
       if (category.questions.length > rows) {
         rows = category.questions.length;
       }
     });
-    this.setState({data: data, rows: rows, cols: data.length});
+    this.setState({ data: data, rows: rows, cols: data.length });
   }
+
 
   componentWillUnmount() {
     window.removeEventListener('resize', this.handleResize);
@@ -40,14 +49,14 @@ class App extends React.Component {
 
   render() {
     let headerHeight = this.state.windowWidth > 640 ? 100 : 40,
-        cardWidth = this.state.windowWidth / this.state.cols,
-        cardHeight = (this.state.windowHeight - headerHeight) / this.state.rows,
-        cards = [];
+      cardWidth = this.state.windowWidth / this.state.cols,
+      cardHeight = (this.state.windowHeight - headerHeight) / this.state.rows,
+      cards = [];
 
     this.state.data.forEach((category, categoryIndex) => {
       let left = categoryIndex * cardWidth;
       category.questions.forEach((question, questionIndex) => {
-        cards.push(<Card left={left} top={questionIndex * cardHeight + headerHeight} height={cardHeight} width={cardWidth} question={question} key={categoryIndex + '-' + questionIndex}/>);
+        cards.push(<Card left={left} top={questionIndex * cardHeight + headerHeight} height={cardHeight} width={cardWidth} question={question} key={categoryIndex + '-' + questionIndex} />);
       })
     });
     return (
@@ -61,4 +70,4 @@ class App extends React.Component {
 };
 
 ReactDOM.render(
-  <App/>, document.getElementById('app'));
+  <App />, document.getElementById('app'));

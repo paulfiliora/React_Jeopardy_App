@@ -123,7 +123,8 @@
 	    _this.state = {
 	      windowWidth: window.innerWidth,
 	      windowHeight: window.innerHeight,
-	      data: []
+	      data: [],
+	      playing: false
 	    };
 	    return _this;
 	  }
@@ -134,12 +135,23 @@
 	      this.setState({ windowWidth: window.innerWidth, windowHeight: window.innerHeight });
 	    }
 	  }, {
+	    key: 'audioPlay',
+	    value: function audioPlay() {
+	      if (!this.state.playing) {
+	        this.setState({ playing: true });
+	        audio.play("countdown");
+	      } else {
+	        this.setState({ playing: false });
+	        audio.stop("countdown");
+	      }
+	    }
+	  }, {
 	    key: 'componentDidMount',
 	    value: function componentDidMount() {
 	      window.addEventListener('resize', this.handleResize.bind(this));
 	      window.addEventListener('keypress', function (e) {
 	        if (e.keyCode === 32) {
-	          audio.play("countdown");
+	          this.audioPlay.bind(this);
 	        }
 	      });
 	      var rows = 0;
@@ -22411,7 +22423,7 @@
 	  _createClass(Card, [{
 	    key: 'clickHandler',
 	    value: function clickHandler(event) {
-	      if (!this.state.completed) {
+	      if (!this.state.completed || this.state.completed) {
 	        if (this.state.view === 'points') {
 	          audio.play("flip");
 	          audio.play("countdown");
