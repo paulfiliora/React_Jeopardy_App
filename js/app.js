@@ -18,21 +18,20 @@ class App extends React.Component {
   handleResize(event) {
     this.setState({ windowWidth: window.innerWidth, windowHeight: window.innerHeight });
   }
-  
+
   componentDidMount() {
     window.addEventListener('resize', this.handleResize.bind(this));
-    window.addEventListener('keypress', function (e) {
-      if (e.keyCode === 32) {     
-        if (!this.state.playing) {
-          this.setState({ playing: true });
-          audio.play("countdown");
-        } 
-        else {
-          this.setState({ playing: false })
-          audio.stop("countdown");
-        }
+    window.addEventListener('keydown', function (e) {
+      if (e.keyCode === 76) {
+        audio.play("laugh");
+      } else if (e.keyCode === 32) {
+        audio.play("countdown");
+      } else if (e.keyCode === 68) {
+        audio.play("ding");
+      } else if (e.keyCode === 66) {
+        audio.play("boo");
       }
-    }); 
+    });
     let rows = 0;
     data.forEach(category => {
       if (category.questions.length > rows) {

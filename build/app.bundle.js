@@ -135,23 +135,18 @@
 	      this.setState({ windowWidth: window.innerWidth, windowHeight: window.innerHeight });
 	    }
 	  }, {
-	    key: 'audioPlay',
-	    value: function audioPlay() {
-	      if (!this.state.playing) {
-	        this.setState({ playing: true });
-	        audio.play("countdown");
-	      } else {
-	        this.setState({ playing: false });
-	        audio.stop("countdown");
-	      }
-	    }
-	  }, {
 	    key: 'componentDidMount',
 	    value: function componentDidMount() {
 	      window.addEventListener('resize', this.handleResize.bind(this));
-	      window.addEventListener('keypress', function (e) {
-	        if (e.keyCode === 32) {
-	          this.audioPlay.bind(this);
+	      window.addEventListener('keydown', function (e) {
+	        if (e.keyCode === 76) {
+	          audio.play("laugh");
+	        } else if (e.keyCode === 32) {
+	          audio.play("countdown");
+	        } else if (e.keyCode === 68) {
+	          audio.play("ding");
+	        } else if (e.keyCode === 66) {
+	          audio.play("boo");
 	        }
 	      });
 	      var rows = 0;
@@ -22430,6 +22425,8 @@
 	          this.setState({ view: 'question', flipping: true });
 	        } else if (this.state.view === 'question') {
 	          audio.stop("countdown");
+	          this.setState({ view: 'thinking' });
+	        } else if (this.state.view === 'thinking') {
 	          audio.play("result");
 	          this.setState({ view: 'answer' });
 	        } else {
@@ -22443,7 +22440,7 @@
 	    key: 'getLabelBack',
 	    value: function getLabelBack() {
 	      return {
-	        __html: this.state.view === 'question' ? this.props.question.question : this.props.question.answer
+	        __html: this.state.view === 'question' ? this.props.question.question : this.state.view === 'thinking' ? this.props.question.question : this.props.question.answer
 	      };
 	    }
 	  }, {
@@ -22501,6 +22498,9 @@
 	sounds.flipBack = new Audio("assets/audio/card-flip-back.mp3");
 	sounds.countdown = new Audio("assets/audio/timer_theme.wav");
 	sounds.result = new Audio("assets/audio/result.mp3");
+	sounds.laugh = new Audio("assets/audio/laugh.mp3");
+	sounds.ding = new Audio("assets/audio/bell-ding.mp3");
+	sounds.boo = new Audio("assets/audio/boo.mp3");
 	
 	var play = exports.play = function play(sound) {
 	  if (sounds[sound]) {

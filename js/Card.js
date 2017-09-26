@@ -18,6 +18,8 @@ class Card extends React.Component {
         this.setState({view: 'question', flipping: true});
       } else if (this.state.view === 'question') {
         audio.stop("countdown");
+        this.setState({view: 'thinking'});
+      } else if (this.state.view === 'thinking') {
         audio.play("result")
         this.setState({view: 'answer'});
       } else {
@@ -30,8 +32,10 @@ class Card extends React.Component {
 
   getLabelBack() {
     return {
-      __html: this.state.view === 'question'
+      __html: (this.state.view === 'question')
         ? this.props.question.question
+        : (this.state.view === 'thinking')
+        ? this.props.question.question        
         : this.props.question.answer
     };
   }
