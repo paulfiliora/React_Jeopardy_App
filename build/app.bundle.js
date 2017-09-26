@@ -22420,8 +22420,15 @@
 	    value: function clickHandler(event) {
 	      if (!this.state.completed || this.state.completed) {
 	        if (this.state.view === 'points') {
-	          audio.play("flip");
-	          audio.play("countdown");
+	          console.log(this.getLabelBack().__html);
+	
+	          if (this.getLabelBack().__html === "!PRESENTATION!") {
+	            audio.play("double");
+	          } else {
+	            audio.play("flip");
+	            audio.play("countdown");
+	          }
+	
 	          this.setState({ view: 'question', flipping: true });
 	        } else if (this.state.view === 'question') {
 	          audio.stop("countdown");
@@ -22501,6 +22508,7 @@
 	sounds.laugh = new Audio("assets/audio/laugh.mp3");
 	sounds.ding = new Audio("assets/audio/bell-ding.mp3");
 	sounds.boo = new Audio("assets/audio/boo.mp3");
+	sounds.double = new Audio("assets/audio/daily_double.mp3");
 	
 	var play = exports.play = function play(sound) {
 	  if (sounds[sound]) {

@@ -14,8 +14,8 @@ var data = [
       },
       {
         "points": "$600",
-        "question": "A derivative form of content marketing that received critical attention during and after the U.S. presidential campaign",
-        "answer": "Answer?"
+        "question": "!PRESENTATION!",
+        "answer": "!PRESENTATION!"
       },
       {
         "points": "$800",
@@ -54,8 +54,8 @@ var data = [
       },
       {
         "points": "$1000",
-        "question": "If the average banner click-through rate is 0.07%, then average click-through rate of a retargeting banner is X times ",
-        "answer": "10X or 0.7%"
+        "question": "!PRESENTATION!",
+        "answer": "!PRESENTATION!"
       }
     ]
   },
@@ -84,8 +84,8 @@ var data = [
       },
       {
         "points": "$1000",
-        "question": "What % of smartphones will use gesture control – e.g. nodding or shaking hand - by 2021?",
-        "answer": "5%"
+        "question": "!PRESENTATION!",
+        "answer": "!PRESENTATION!"
       }
     ]
   },
@@ -104,8 +104,8 @@ var data = [
       },
       {
         "points": "$600",
-        "question": "A machine that can identify images and reveal patterns that people would never detect. ",
-        "answer": "Image recognition"
+        "question": "!PRESENTATION!",
+        "answer": "!PRESENTATION!"
       },
       {
         "points": "$800",

@@ -13,8 +13,16 @@ class Card extends React.Component {
   clickHandler(event) {
     if (!this.state.completed || this.state.completed) {
       if (this.state.view === 'points') {
-        audio.play("flip");
-        audio.play("countdown");        
+        console.log(this.getLabelBack().__html); 
+
+        if(this.getLabelBack().__html === "!PRESENTATION!"){
+          audio.play("double");
+        } else{
+          audio.play("flip");
+          audio.play("countdown");  
+        }
+  
+        
         this.setState({view: 'question', flipping: true});
       } else if (this.state.view === 'question') {
         audio.stop("countdown");
