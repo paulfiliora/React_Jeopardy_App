@@ -22420,15 +22420,12 @@
 	    value: function clickHandler(event) {
 	      if (!this.state.completed || this.state.completed) {
 	        if (this.state.view === 'points') {
-	          console.log(this.getLabelBack().__html);
-	
 	          if (this.getLabelBack().__html === "!PRESENTATION!") {
 	            audio.play("double");
 	          } else {
 	            audio.play("flip");
 	            audio.play("countdown");
 	          }
-	
 	          this.setState({ view: 'question', flipping: true });
 	        } else if (this.state.view === 'question') {
 	          audio.stop("countdown");

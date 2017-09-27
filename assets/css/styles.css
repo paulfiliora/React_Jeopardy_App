@@ -121,7 +121,7 @@ p {
 
 .front>.points {
   color: #EEC924;
-  font-family: fantasy;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .flipper.done .front>.points {

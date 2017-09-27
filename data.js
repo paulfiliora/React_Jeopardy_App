@@ -60,32 +60,32 @@ var data = [
     ]
   },
   {
-    "category": "Retail",
+    "category": "Video",
     "questions": [
       {
         "points": "$200",
-        "question": "Which mega tech brand calls some of its stores “town squares”?",
-        "answer": "Apple"
+        "question": "This term, which is used to define a video that has spread profusely due to organic marketing efforts, has become widely misunderstood and misused.",
+        "answer": "Viral video"
       },
       {
         "points": "$400",
-        "question": "Which possibly surprising generation represents 25% revenue at Dollar General stores?",
-        "answer": "Millennials"
+        "question": "This “search” form of marketing utilizes content that is created based on a range of best practices including keywording, tagging and titling.",
+        "answer": "SEO or Search Engine Optimization"
       },
       {
         "points": "$600",
-        "question": "How much of Amazon’s revenue goes to cover shipping costs?",
-        "answer": "12%?"
+        "question": "Over the last decade, YouTube has offered several length ad units for video including :60, :30 and :15 seconds.  Their new ad unit caters to the micro-moment or incredibly short engagement length that is this long...",
+        "answer": "6 Seconds"
       },
       {
         "points": "$800",
-        "question": "Which Chinese internet giant recently live-streamed New York Fashion Week",
-        "answer": "Alibaba"
+        "question": "!PRESENTATION!",
+        "answer": "!PRESENTATION!"
       },
       {
         "points": "$1000",
-        "question": "!PRESENTATION!",
-        "answer": "!PRESENTATION!"
+        "question": "By 2019, video will make up what percentage of all online content?",
+        "answer": "80%"
       }
     ]
   },
@@ -120,32 +120,32 @@ var data = [
     ]
   },
   {
-    "category": "Category",
+    "category": "Social",
     "questions": [
       {
         "points": "$200",
-        "question": "Question",
-        "answer": "Answer?"
+        "question": "When scrolling through an Instagram feed, this action is the most common type of user engagement:",
+        "answer": "Like a post (98%)"
       },
       {
         "points": "$400",
-        "question": "Question",
-        "answer": "Answer?"
+        "question": "This social media platform recently had to adjust its targeting features due to controversy related to the US Presidential election",
+        "answer": "Facebook"
       },
       {
         "points": "$600",
-        "question": "Question",
-        "answer": "Answer?"
+        "question": "!PRESENTATION!",
+        "answer": "!PRESENTATION!"
       },
       {
         "points": "$800",
-        "question": "Question",
-        "answer": "Answer?"
+        "question": "This social media platform, commonly used for B2B advertising campaigns, has the highest cost-per-click",
+        "answer": "LinkedIn"
       },
       {
         "points": "$1000",
-        "question": "Question",
-        "answer": "Answer?"
+        "question": "This is the most effective way to target new customers based on your current customers on social platforms:",
+        "answer": "Lookalike modeling"
       }
     ]
   }

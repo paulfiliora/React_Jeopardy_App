@@ -13,26 +13,22 @@ class Card extends React.Component {
   clickHandler(event) {
     if (!this.state.completed || this.state.completed) {
       if (this.state.view === 'points') {
-        console.log(this.getLabelBack().__html); 
-
-        if(this.getLabelBack().__html === "!PRESENTATION!"){
+        if (this.getLabelBack().__html === "!PRESENTATION!") {
           audio.play("double");
-        } else{
+        } else {
           audio.play("flip");
-          audio.play("countdown");  
+          audio.play("countdown");
         }
-  
-        
-        this.setState({view: 'question', flipping: true});
+        this.setState({ view: 'question', flipping: true });
       } else if (this.state.view === 'question') {
         audio.stop("countdown");
-        this.setState({view: 'thinking'});
+        this.setState({ view: 'thinking' });
       } else if (this.state.view === 'thinking') {
         audio.play("result")
-        this.setState({view: 'answer'});
+        this.setState({ view: 'answer' });
       } else {
         audio.play("flipBack");
-        this.setState({view: 'points', completed: true, flipping: true});
+        this.setState({ view: 'points', completed: true, flipping: true });
       }
     }
     return;
@@ -43,26 +39,26 @@ class Card extends React.Component {
       __html: (this.state.view === 'question')
         ? this.props.question.question
         : (this.state.view === 'thinking')
-        ? this.props.question.question        
-        : this.props.question.answer
+          ? this.props.question.question
+          : this.props.question.answer
     };
   }
 
   transitionEndHandler(event) {
     if (event.propertyName === 'width') {
-      this.setState({flipping: false});
+      this.setState({ flipping: false });
     }
   }
 
   render() {
     let style = {
-        width: this.props.width + 'px',
-        height: this.props.height + 'px',
-        transform: 'translate3d(' + this.props.left + 'px,' + this.props.top + 'px,0)',
-        WebkitTransform: 'translate3d(' + this.props.left + 'px,' + this.props.top + 'px,0)'
-      },
+      width: this.props.width + 'px',
+      height: this.props.height + 'px',
+      transform: 'translate3d(' + this.props.left + 'px,' + this.props.top + 'px,0)',
+      WebkitTransform: 'translate3d(' + this.props.left + 'px,' + this.props.top + 'px,0)'
+    },
       front = this.state.completed
-        ? <img src='assets/img/react.svg'/>
+        ? <img src='assets/img/react.svg' />
         : <span className='points'>{this.props.question.points}</span>,
       className = 'flipper';
 
@@ -84,8 +80,8 @@ class Card extends React.Component {
             {front}
           </div>
           <div className='back'>
-            <span dangerouslySetInnerHTML={this.getLabelBack()}/>
-            <img src='assets/img/react.svg'/>
+            <span dangerouslySetInnerHTML={this.getLabelBack()} />
+            <img src='assets/img/react.svg' />
           </div>
         </div>
       </div>
